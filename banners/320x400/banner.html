@@ -275,11 +275,11 @@
 
           .from(selectorSlide3, { duration: 0.5, opacity: 0 })
           .from(selectorCTAs, { duration: 0.5, opacity: 0 }, "<+=.2")
-          .to(
-            selectorWhiteCircles,
-            { duration: 0.5, fill: colorWhite, stagger: 0.05 },
-            "<"
-          )
+          // .to(
+          //   selectorWhiteCircles,
+          //   { duration: 0.5, fill: colorWhite, stagger: 0.05 },
+          //   "<"
+          // )
           .call(() => {
             loopCount++;
             if (loopCount === 2) {
