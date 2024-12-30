@@ -87,10 +87,10 @@
 
       svg circle {
         /* transform-box: border-box; */
-        transform-origin: 9.5px 9.5px;
+        transform-origin: 15px 15px;
       }
 
-      #bg path:not(.empty) {
+      #bg circle:not(.empty) {
         stroke: #192f4f;
         fill: #192f4f;
       }
@@ -99,7 +99,7 @@
         fill: #192f4f;
       } */
 
-      #fg path,
+      #fg circle,
       .empty {
         fill: none;
         stroke: #192f4f;
@@ -110,6 +110,91 @@
   <body>
     <div id="banner">
       <svg
+        id="bg"
+        width="980"
+        height="600"
+        viewBox="0 0 980 600"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle class="white bullet" cx="834.5" cy="69.5" r="15.5" />
+        <circle class="white bullet" cx="873.5" cy="69.5" r="15.5" />
+        <circle class="white bullet" cx="912.5" cy="69.5" r="15.5" />
+        <circle class="white bullet" cx="834.5" cy="108.1" r="15.5" />
+        <circle class="white" cx="873.5" cy="108.1" r="15.5" />
+        <circle class="white" cx="912.5" cy="108.1" r="15.5" />
+        <circle class="white" cx="834.5" cy="146.7" r="15.5" />
+        <circle class="white" cx="873.5" cy="146.7" r="15.5" />
+        <circle class="white" cx="912.5" cy="146.7" r="15.5" />
+        <circle class="white" cx="834.5" cy="185.3" r="15.5" />
+        <circle class="white" cx="873.5" cy="185.3" r="15.5" />
+        <circle class="white" cx="912.5" cy="185.3" r="15.5" />
+        <circle class="white" cx="834.5" cy="223.9" r="15.5" />
+        <circle class="white" cx="873.5" cy="223.9" r="15.5" />
+        <circle class="white" cx="912.5" cy="223.9" r="15.5" />
+        <circle class="white" cx="834.5" cy="262.5" r="15.5" />
+        <circle class="white" cx="873.5" cy="262.5" r="15.5" />
+        <circle class="white" cx="912.5" cy="262.5" r="15.5" />
+        <circle class="white" cx="834.5" cy="301.1" r="15.5" />
+        <circle class="white" cx="873.5" cy="301.1" r="15.5" />
+        <circle cx="912.5" cy="301.1" r="15.5" />
+        <circle cx="834.5" cy="339.7" r="15.5" />
+        <circle cx="873.5" cy="339.7" r="15.5" />
+        <circle cx="912.5" cy="339.7" r="15.5" />
+        <circle cx="834.5" cy="378.3" r="15.5" />
+        <circle class="empty" cx="873.5" cy="378.3" r="15.5" />
+        <circle class="empty" cx="912.5" cy="378.3" r="15.5" />
+        <circle class="empty" cx="834.5" cy="416.9" r="15.5" />
+        <circle class="empty" cx="873.5" cy="416.9" r="15.5" />
+        <circle class="empty" cx="912.5" cy="416.9" r="15.5" />
+        <circle class="empty" cx="834.5" cy="455.5" r="15.5" />
+        <circle class="empty" cx="873.5" cy="455.5" r="15.5" />
+        <circle class="empty" cx="912.5" cy="455.5" r="15.5" />
+      </svg>
+      <svg
+        id="fg"
+        width="980"
+        height="600"
+        viewBox="0 0 980 600"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="834.5" cy="69.5" r="15.5" />
+        <circle cx="873.5" cy="69.5" r="15.5" />
+        <circle cx="912.5" cy="69.5" r="15.5" />
+        <circle cx="834.5" cy="108.1" r="15.5" />
+        <circle cx="873.5" cy="108.1" r="15.5" />
+        <circle cx="912.5" cy="108.1" r="15.5" />
+        <circle cx="834.5" cy="146.7" r="15.5" />
+        <circle cx="873.5" cy="146.7" r="15.5" />
+        <circle cx="912.5" cy="146.7" r="15.5" />
+        <circle cx="834.5" cy="185.3" r="15.5" />
+        <circle cx="873.5" cy="185.3" r="15.5" />
+        <circle cx="912.5" cy="185.3" r="15.5" />
+        <circle cx="834.5" cy="223.9" r="15.5" />
+        <circle cx="873.5" cy="223.9" r="15.5" />
+        <circle cx="912.5" cy="223.9" r="15.5" />
+        <circle cx="834.5" cy="262.5" r="15.5" />
+        <circle cx="873.5" cy="262.5" r="15.5" />
+        <circle cx="912.5" cy="262.5" r="15.5" />
+        <circle cx="834.5" cy="301.1" r="15.5" />
+        <circle cx="873.5" cy="301.1" r="15.5" />
+        <circle cx="912.5" cy="301.1" r="15.5" />
+        <circle cx="834.5" cy="339.7" r="15.5" />
+        <circle cx="873.5" cy="339.7" r="15.5" />
+        <circle cx="912.5" cy="339.7" r="15.5" />
+        <circle cx="834.5" cy="378.3" r="15.5" />
+        <circle cx="873.5" cy="378.3" r="15.5" />
+        <circle cx="912.5" cy="378.3" r="15.5" />
+        <circle cx="834.5" cy="416.9" r="15.5" />
+        <circle cx="873.5" cy="416.9" r="15.5" />
+        <circle cx="912.5" cy="416.9" r="15.5" />
+        <circle cx="834.5" cy="455.5" r="15.5" />
+        <circle cx="873.5" cy="455.5" r="15.5" />
+        <circle cx="912.5" cy="455.5" r="15.5" />
+      </svg>
+
+      <!-- <svg
         id="bg"
         width="980"
         height="600"
@@ -289,7 +374,7 @@
         <path
           d="M947.371 264.571C947.371 271.167 942.024 276.514 935.428 276.514C928.833 276.514 923.486 271.167 923.486 264.571C923.486 257.976 928.833 252.629 935.428 252.629C942.024 252.629 947.371 257.976 947.371 264.571Z"
         />
-      </svg>
+      </svg> -->
 
       <img src="./brand.png" />
       <div id="word-container">
@@ -323,8 +408,8 @@
         const selectorWords = ["#word-1", "#word-2", "#word-3", "#word-4"];
         const selectorSlide2 = "#slide-2";
         const selectorSlide3 = "#slide-3";
-        const selectorForegroundCircles = "#fg path";
-        const selectorBackgroundCircles = "#bg path";
+        const selectorForegroundCircles = "#fg circle";
+        const selectorBackgroundCircles = "#bg circle";
         const selectorWhiteCircles = ".white";
         const selectorBulletCircles = ".bullet";
 
