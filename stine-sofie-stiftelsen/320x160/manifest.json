@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+
+  "title": "320x160 Banner",
+
+  "width": "320",
+  "height": "160",
+
+  "events": {
+    "enabled": 0
+  },
+
+  "clicktags": {
+    "clickTAG": "https://site.adform.com"
+  },
+
+  "source": "banner.html"
+}

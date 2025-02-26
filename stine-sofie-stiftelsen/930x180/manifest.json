@@ -1,0 +1,18 @@
+{
+  "version": "1.0",
+
+  "title": "930x180 Banner",
+
+  "width": "930",
+  "height": "180",
+
+  "events": {
+    "enabled": 0
+  },
+
+  "clicktags": {
+    "clickTAG": "https://site.adform.com"
+  },
+
+  "source": "banner.html"
+}

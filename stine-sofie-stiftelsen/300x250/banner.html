@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      document.write(
+        '<script src="' +
+          (window.API_URL ||
+            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
+              Math.random()) +
+          '"><\/script>'
+      );
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --color-beige: #fef6f2;
+
+        --width: 300px;
+        --height: 250px;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: var(--width);
+        height: var(--height);
+
+        overflow: hidden;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      #banner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: var(--color-beige);
+        cursor: pointer;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      #banner img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner">
+      <div class="container">
+        <img src="./Logo.png" />
+        <img id="textA" src="./Tekst Side 1.png" />
+        <img id="textB" src="./Tekst Side 2.png" />
+        <img id="button" src="./Knapp.png" />
+        <img id="illustration" src="./Placeholder Illustrasjon.png" />
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const clickTAGvalue = dhtml.getVar("clickTAG", "https://example.com");
+        const bannerElement = document.getElementById("banner");
+        bannerElement.addEventListener("click", function () {
+          window.open(clickTAGvalue, "_blank");
+        });
+
+        let loop = 0;
+
+        const tl = gsap.timeline({
+          delay: 1.2,
+          repeat: -1,
+          defaults: {
+            duration: 0.8,
+          },
+        });
+
+        gsap.from("#illustration", { x: "50%", delay: 0.2, duration: 0.6 });
+
+        tl.from("#textA", { autoAlpha: 0, y: "10%" })
+          .to("#textA", { autoAlpha: 0, y: "-10%" }, "+=2")
+          .from("#textB", { autoAlpha: 0, y: "10%" }, "-=.2")
+          .from("#button", { autoAlpha: 0, y: "10%" }, "<+.2")
+          .call(
+            () => {
+              if (loop === 2) {
+                tl.pause();
+              } else {
+                loop += 1;
+              }
+            },
+            null,
+            "<"
+          )
+          .to("#textB", { autoAlpha: 0, y: "-10%" }, "+=2")
+          .to("#button", { autoAlpha: 0, y: "-10%" }, "<+.2");
+      });
+    </script>
+  </body>
+</html>
