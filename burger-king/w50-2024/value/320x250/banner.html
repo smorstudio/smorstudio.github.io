@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      document.write(
+        '<script src="' +
+          (window.API_URL ||
+            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
+              Math.random()) +
+          '"><\/script>'
+      );
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --color-brown: #502314;
+        --color-beige: #f5ebdc;
+
+        --clip-path-position-top-left: 247px;
+        --clip-path-position-top-left-offset: 100%;
+
+        --clip-path-position-bottom-left: 77px;
+        --clip-path-position-bottom-left-offset: 100%;
+
+        --width: 320px;
+        --height: 250px;
+
+        --disclaimer-font-size: 8px;
+        --disclaimer-line-height: 8px;
+        --disclaimer-color: var(--color-brown);
+        --disclaimer-font-family: sans-serif;
+        --disclaimer-position-bottom: 12px;
+        --disclaimer-position-right: 16px;
+
+        --transform-origin-coffee-from: 50px 32px;
+        --transform-origin-coffee-price: 50px 60px;
+
+        --transform-origin-burger-from: 258px 40px;
+        --transform-origin-burger-price: 258px 70px;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: var(--width);
+        height: var(--height);
+
+        overflow: hidden;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      #banner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      #container-coffee {
+        background-color: var(--color-brown);
+      }
+
+      #coffee-from {
+        transform-origin: var(--transform-origin-coffee-from);
+      }
+
+      #coffee-price {
+        transform-origin: var(--transform-origin-coffee-price);
+      }
+
+      #container-burger {
+        background-color: var(--color-beige);
+        clip-path: polygon(
+          calc(100% + var(--clip-path-position-top-left)) 0%,
+          calc(300% + var(--clip-path-position-top-left)) 0%,
+          calc(300% + var(--clip-path-position-bottom-left)) 100%,
+          calc(100% + var(--clip-path-position-bottom-left)) 100%
+        );
+      }
+
+      #burger-from {
+        transform-origin: var(--transform-origin-burger-from);
+      }
+
+      #burger-price {
+        transform-origin: var(--transform-origin-burger-price);
+      }
+
+      #banner img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      #disclaimer {
+        position: absolute;
+        bottom: var(--disclaimer-position-bottom);
+        right: var(--disclaimer-position-right);
+        text-align: right;
+        font-size: var(--disclaimer-font-size);
+        line-height: var(--disclaimer-line-height);
+        color: var(--color-brown);
+        font-family: sans-serif;
+      }
+
+      .price {
+        transform: scale(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner">
+      <div class="container" id="container-coffee">
+        <img id="coffee-item" src="./kaffe.png" />
+        <img id="coffee-text" src="./kaffe-text.png" />
+        <img class="price" id="coffee-from" src="./kaffe-fra.png" />
+        <img class="price" id="coffee-price" src="./kaffe-price.png" />
+      </div>
+
+      <div class="container" id="container-burger">
+        <img id="burger-item" src="./burger.png" />
+        <img id="burger-text" src="./burger-text.png" />
+        <img class="price" id="burger-from" src="./burger-fra.png" />
+        <img class="price" id="burger-price" src="./burger-price.png" />
+      </div>
+
+      <img src="./logo.png" />
+
+      <p id="disclaimer">Pris og deltakende restauranter kan variere</p>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const clickTAGvalue = dhtml.getVar("clickTAG", "https://example.com");
+        const bannerElement = document.getElementById("banner");
+        bannerElement.addEventListener("click", function () {
+          window.open(clickTAGvalue, "_blank");
+        });
+
+        const style = getComputedStyle(document.body);
+
+        const clipPathPositionTopLeft = style.getPropertyValue(
+          "--clip-path-position-top-left"
+        );
+
+        const clipPathPositionBottomLeft = style.getPropertyValue(
+          "--clip-path-position-bottom-left"
+        );
+
+        const tl = gsap.timeline({ delay: 0.5, repeat: -1, repeatDelay: 0.5 });
+        const bounce = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
+
+        let loop = 0;
+
+        gsap.set(
+          ["#coffee-item", "#coffee-text", "#burger-item", "#burger-text"],
+          { x: "100%" }
+        );
+
+        tl.to(
+          ["#coffee-item", "#coffee-text"],
+          {
+            x: 0,
+            duration: 0.4,
+            ease: "back.out(1.4)",
+            stagger: 0.05,
+          },
+          "initial"
+        )
+          .to(
+            "#container-burger",
+            {
+              clipPath: `polygon(
+              calc(
+                0% +
+                  ${clipPathPositionTopLeft}
+              )
+              0%,
+              calc(200% + ${clipPathPositionTopLeft}) 0%,
+              calc(200% + ${clipPathPositionBottomLeft}) 100%,
+              calc(
+                0% +
+                  ${clipPathPositionBottomLeft}
+              )
+              100%
+            )`,
+              duration: 0.6,
+              ease: "back.out(1.4)",
+            },
+            "initial+=.1"
+          )
+          .to(
+            ["#burger-item", "#burger-text"],
+            {
+              x: 0,
+              duration: 0.4,
+              ease: "back.out(1.4)",
+              stagger: 0.05,
+            },
+            "initial+=0.3"
+          )
+          .to(
+            ["#coffee-price", "#coffee-from"],
+            {
+              scale: 1,
+              duration: 0.2,
+              stagger: 0.15,
+              ease: "back.out(1.4)",
+            },
+            "-=0.3"
+          )
+          .to(
+            ["#burger-price", "#burger-from"],
+            {
+              scale: 1,
+              duration: 0.2,
+              stagger: 0.15,
+              ease: "back.out(1.4)",
+            },
+            "-=0.1"
+          )
+          .call(() => {
+            if (loop >= 4) {
+              tl.pause();
+            } else {
+              loop++;
+            }
+          })
+          .to(
+            "#container-burger",
+            {
+              clipPath: `polygon(
+          calc(
+            -300% +
+              ${clipPathPositionTopLeft}
+          )
+          0%,
+          calc(-100% + ${clipPathPositionTopLeft}) 0%,
+          calc(-100% + ${clipPathPositionBottomLeft}) 100%,
+          calc(
+            -300% +
+              ${clipPathPositionBottomLeft}
+          )
+          100%
+        )`,
+              duration: 0.7,
+            },
+            "+=3"
+          )
+          .set(
+            ["#coffee-item", "#coffee-text", "#burger-item", "#burger-text"],
+            { x: "100%" },
+            "-=0.45"
+          )
+          .set(
+            ["#coffee-from", "#coffee-price", "#burger-from", "#burger-price"],
+            { scale: 0 },
+            "-=0.475"
+          );
+      });
+    </script>
+  </body>
+</html>

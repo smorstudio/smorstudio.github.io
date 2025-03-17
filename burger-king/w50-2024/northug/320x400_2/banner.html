@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      document.write(
+        '<script src="' +
+          (window.API_URL ||
+            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
+              Math.random()) +
+          '"><\/script>'
+      );
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <title></title>
+    <style>
+      :root {
+        --width: 320px;
+        --height: 400px;
+
+        --color-brown: #502314;
+        --color-beige: #f5ebdc;
+
+        --clip-position: 250px;
+      }
+
+      html,
+      body {
+        width: var(--width);
+        height: var(--height);
+        overflow: hidden;
+        margin: 0;
+      }
+
+      #banner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        background-color: var(--color-brown);
+      }
+
+      #banner img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      #northug {
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% var(--clip-position),
+          0 var(--clip-position)
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner">
+      <img id="northug" src="./northug.jpg" alt="" />
+      <img src="./logo.png" alt="" />
+      <img id="tagline" src="./tagline.png" alt="" />
+      <img class="text" src="./text-1.png" alt="" />
+      <img class="text" src="./text-2.png" alt="" />
+      <img class="text" src="./text-3.png" alt="" />
+      <img class="text" src="./text-4.png" alt="" />
+      <img class="text" src="./text-5.png" alt="" />
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const clickTAGvalue = dhtml.getVar("clickTAG", "https://example.com");
+        const bannerElement = document.getElementById("banner");
+        bannerElement.addEventListener("click", function () {
+          window.open(clickTAGvalue, "_blank");
+        });
+
+        const styles = getComputedStyle(document.body);
+
+        const clipStartPosition = styles.getPropertyValue("--clip-position");
+
+        const clipEndPosition = 186;
+
+        let loopCount = 0;
+        const tl = gsap.timeline({
+          delay: 0.4,
+          defaults: {
+            ease: "back.out(1.1)",
+          },
+          repeat: -1,
+          repeatDelay: 1,
+        });
+
+        gsap.set("#northug", {
+          "--clip-position": clipStartPosition,
+        });
+        gsap.set(".text", {
+          opacity: 0,
+          y: "30%",
+        });
+
+        tl.to("#northug", {
+          css: { "--clip-position": clipEndPosition, ease: "back.out(2)" },
+        })
+          .to(
+            ".text",
+            {
+              duration: 0.3,
+              opacity: 1,
+              y: 0,
+              stagger: 0.1,
+            },
+            "<+0.1"
+          )
+          .from("#tagline", {
+            duration: 0.4,
+            opacity: 0,
+            y: "10%",
+          })
+          .call(() => {
+            if (loopCount === 3) {
+              tl.pause();
+            } else {
+              loopCount++;
+            }
+          })
+          .to(
+            "#tagline",
+            {
+              duration: 0.4,
+              opacity: 0,
+              y: "10%",
+            },
+            "+=4"
+          )
+          .to(
+            "#northug",
+            {
+              css: {
+                "--clip-position": clipStartPosition,
+                ease: "back.out(2)",
+              },
+            },
+            "-=.2"
+          )
+          .to(
+            ".text",
+            {
+              duration: 0.4,
+              opacity: 0,
+              y: "30%",
+            },
+            "<"
+          );
+      });
+    </script>
+  </body>
+</html>
