@@ -89,12 +89,14 @@
           },
         });
 
-        tl.from("#illustration", { x: "100%" })
+        tl
+          // .from("#illustration", { x: "100%" })
           .from("#textA", { autoAlpha: 0, y: "10%" }, "<+.1")
           .to("#textA", { autoAlpha: 0, y: "-10%" }, "+=2")
-          .to("#illustration", { x: "100%" }, "<")
           .set("#illustration", { y: "-32%" })
-          .to("#illustration", { x: "0%" })
+          // .to("#illustration", { x: "100%" }, "<")
+          // .set("#illustration", { y: "-32%" })
+          // .to("#illustration", { x: "0%" })
           .from("#textB", { autoAlpha: 0, y: "10%" }, "<+.2")
           .from("#button", { autoAlpha: 0, y: "10%" }, "<+.2")
           .call(
@@ -108,10 +110,11 @@
             null,
             "<"
           )
-          .to("#illustration", { x: "100%" }, "+=2")
+          .to("#illustration", { y: "0%" })
+          // .to("#illustration", { x: "100%" }, "+=2")
           .to("#textB", { autoAlpha: 0, y: "-10%" }, "<")
-          .to("#button", { autoAlpha: 0, y: "-10%" }, "<+.2")
-          .set("#illustration", { y: "0%" });
+          .to("#button", { autoAlpha: 0, y: "-10%" }, "<+.2");
+        // .set("#illustration", { y: "0%" });
       });
     </script>
   </body>
