@@ -17,3 +17,87 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+#line {
+  overflow: hidden;
+  object-fit: cover;
+  object-position: left;
+
+  animation-name: line;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-name: line;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#tag {
+  transform-origin: 90% 90%;
+
+  animation-name: tag;
+  animation-duration: 3s;
+  animation-iteration-count: 5;
+  animation-fill-mode: forwards;
+
+  -webkit-animation-name: tag;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-iteration-count: 5;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes line {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes line {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes tag {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@-webkit-keyframes tag {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  70% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
