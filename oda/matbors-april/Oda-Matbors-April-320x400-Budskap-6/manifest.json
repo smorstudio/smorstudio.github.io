@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+
+  "title": "320x400_oda_matbors-april_6",
+  "description": "",
+
+  "width": "320",
+  "height": "400",
+
+  "events": {
+    "enabled": 1,
+    "list": {}
+  },
+
+  "clicktags": {
+    "clickTAG": "https://www.oda.no/"
+  },
+
+  "source": "index.html"
+}
