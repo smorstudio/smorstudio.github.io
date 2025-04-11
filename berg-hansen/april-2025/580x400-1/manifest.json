@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+
+  "title": "580x400_berg-hansen-budskap-1",
+  "description": "",
+
+  "width": "580",
+  "height": "400",
+
+  "events": {
+    "enabled": 1,
+    "list": {}
+  },
+
+  "clicktags": {
+    "clickTAG": "https://www.berg-hansen.no/"
+  },
+
+  "source": "index.html"
+}
