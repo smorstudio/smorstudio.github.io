@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+
+  "title": "Oliviero-April25-1920x2160-Budskap-1",
+  "description": "",
+
+  "width": "1920",
+  "height": "2160",
+
+  "events": {
+    "enabled": 1,
+    "list": {}
+  },
+
+  "clicktags": {
+    "clickTAG": "https://mills.no/olivero/produkt/olivero/"
+  },
+
+  "source": "index.html"
+}
