@@ -17,3 +17,77 @@ body {
   height: 100%;
   object-fit: cover;
 }
+
+#background {
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 10s;
+  animation-name: backgroundAnimation;
+}
+
+#title,
+#text1,
+#text2 {
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 2s;
+  opacity: 0;
+}
+
+#title {
+  animation-name: titleAnimation;
+}
+#text1 {
+  animation-name: text1Animation;
+}
+#text2 {
+  animation-name: text2Animation;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes titleAnimation {
+  0%,
+  10% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  30%,
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text1Animation {
+  0%,
+  30% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  50%,
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes text2Animation {
+  0%,
+  50% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  70%,
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
