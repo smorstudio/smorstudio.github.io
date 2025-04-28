@@ -22,12 +22,13 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-duration: 10s;
-  animation-name: backgroundAnimation;
+  animation-name: zoomIn;
 }
 
 #title,
 #text1,
 #text2 {
+  animation-name: fadeIn;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-duration: 2s;
@@ -35,16 +36,16 @@ body {
 }
 
 #title {
-  animation-name: titleAnimation;
+  animation-delay: 0s;
 }
 #text1 {
-  animation-name: text1Animation;
+  animation-delay: 2s;
 }
 #text2 {
-  animation-name: text2Animation;
+  animation-delay: 4s;
 }
 
-@keyframes backgroundAnimation {
+@keyframes zoomIn {
   0% {
     transform: scale(1);
   }
@@ -53,39 +54,11 @@ body {
   }
 }
 
-@keyframes titleAnimation {
-  0%,
-  10% {
+@keyframes fadeIn {
+  0% {
     transform: translateY(20px);
     opacity: 0;
   }
-  30%,
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes text1Animation {
-  0%,
-  30% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  50%,
-  100% {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes text2Animation {
-  0%,
-  50% {
-    transform: translateY(20px);
-    opacity: 0;
-  }
-  70%,
   100% {
     transform: translateY(0px);
     opacity: 1;
