@@ -17,19 +17,43 @@
     <style>
       #banner {
         max-width: 1920px;
-        height: 1080px;
+        max-height: 1080px;
+        min-width: 528px;
+        min-height: 740px;
         width: 100%;
         height: 100%;
+      }
+      .slide,
+      .layer {
+        object-fit: cover;
       }
     </style>
   </head>
   <body>
     <div id="banner" class="layer">
-      <img id="background" class="layer" src="./background.png" />
-      <img id="title" class="layer" src="./text-title.png" />
-      <img id="text1" class="layer" src="./text-payoff-1.png" />
-      <img id="text2" class="layer" src="./text-payoff-2.png" />
-      <img id="arrow" class="layer" src="./arrow.png" />
+      <img class="layer background" src="./image.jpg" />
+
+      <div class="layer desktop">
+        <div class="slide slide1">
+          <img class="layer title" src="./text-title.png" />
+        </div>
+        <div class="slide slide2">
+          <img class="layer text1" src="./text-payoff-1.png" />
+          <img class="layer text2" src="./text-payoff-2.png" />
+          <img class="layer arrow" src="./arrow.png" />
+        </div>
+      </div>
+
+      <div class="layer mobile">
+        <div class="slide slide1">
+          <img class="layer title" src="./text-title-mobile.png" />
+        </div>
+        <div class="slide slide2">
+          <img class="layer text1" src="./text-payoff-1-mobile.png" />
+          <img class="layer text2" src="./text-payoff-2-mobile.png" />
+          <img class="layer arrow" src="./arrow-mobile.png" />
+        </div>
+      </div>
     </div>
 
     <script>

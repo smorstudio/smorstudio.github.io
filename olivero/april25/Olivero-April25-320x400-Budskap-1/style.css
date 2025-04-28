@@ -9,40 +9,76 @@ body {
   overflow: hidden;
 }
 
+.slide,
 .layer {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
-#background {
+.background {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-duration: 10s;
   animation-name: zoomIn;
+  object-fit: cover;
 }
 
-#title,
-#text1,
-#text2 {
+.slide {
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 6s;
+  opacity: 0;
+}
+.slide1 {
+  animation-name: slide1;
+}
+.slide2 {
+  animation-name: slide2;
+}
+
+.title {
   animation-name: fadeIn;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-duration: 2s;
+  animation-duration: 1s;
+  opacity: 0;
+}
+.text1,
+.text2,
+.arrow {
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
   opacity: 0;
 }
 
-#title {
-  animation-delay: 0s;
+.text1 {
+  animation-name: fadeIn;
+  animation-delay: 3s;
 }
-#text1 {
-  animation-delay: 2s;
-}
-#text2 {
+.text2 {
+  animation-name: fadeIn;
   animation-delay: 4s;
+}
+.arrow {
+  animation-name: arrowIn;
+  animation-delay: 5s;
+}
+
+.desktop {
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+.mobile {
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+  }
 }
 
 @keyframes zoomIn {
@@ -50,17 +86,51 @@ body {
     transform: scale(1);
   }
   100% {
-    transform: scale(1.2);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes slide1 {
+  0% {
+    opacity: 0;
+  }
+  5%,
+  45% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slide2 {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  55%,
+  100% {
+    opacity: 1;
   }
 }
 
 @keyframes fadeIn {
   0% {
-    transform: translateY(20px);
+    transform: translateY(10px);
     opacity: 0;
   }
   100% {
     transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes arrowIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
     opacity: 1;
   }
 }
