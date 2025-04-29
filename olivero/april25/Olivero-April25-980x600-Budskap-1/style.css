@@ -22,7 +22,7 @@ body {
 .background {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-duration: 10s;
+  animation-duration: 12s;
   animation-name: zoomIn;
   object-fit: cover;
 }
@@ -30,7 +30,7 @@ body {
 .slide {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-duration: 6s;
+  animation-duration: 8s;
   opacity: 0;
 }
 .slide1 {
@@ -40,13 +40,38 @@ body {
   animation-name: slide2;
 }
 
-.title {
+.title2,
+.title3 {
   animation-name: fadeIn;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-duration: 1s;
   opacity: 0;
 }
+
+.title1 {
+  animation-delay: 0s;
+}
+.title2 {
+  animation-delay: 1s;
+}
+.title3 {
+  animation-delay: 2s;
+}
+
+.underline {
+  animation-name: lineIn;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  opacity: 0;
+  animation-delay: 2s;
+
+  object-position: left center;
+  object-fit: none;
+}
+
 .text1,
 .text2,
 .arrow {
@@ -58,15 +83,15 @@ body {
 
 .text1 {
   animation-name: fadeIn;
-  animation-delay: 3s;
+  animation-delay: 4s;
 }
 .text2 {
   animation-name: fadeIn;
-  animation-delay: 4s;
+  animation-delay: 5s;
 }
 .arrow {
   animation-name: arrowIn;
-  animation-delay: 5s;
+  animation-delay: 6s;
 }
 
 .desktop {
@@ -91,10 +116,7 @@ body {
 }
 
 @keyframes slide1 {
-  0% {
-    opacity: 0;
-  }
-  5%,
+  0%,
   45% {
     opacity: 1;
   }
@@ -123,6 +145,17 @@ body {
   100% {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+
+@keyframes lineIn {
+  0% {
+    opacity: 1;
+    width: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
   }
 }
 
