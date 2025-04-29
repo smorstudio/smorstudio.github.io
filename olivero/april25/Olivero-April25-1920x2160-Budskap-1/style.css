@@ -64,12 +64,12 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
-  animation-duration: 3s;
+  animation-duration: 1s;
   opacity: 0;
   animation-delay: 2s;
 
-  object-position: left center;
-  object-fit: none;
+  object-position: center center;
+  object-fit: contain;
 }
 
 .text1,
@@ -150,12 +150,10 @@ body {
 
 @keyframes lineIn {
   0% {
-    opacity: 1;
-    width: 0;
+    opacity: 0;
   }
   100% {
     opacity: 1;
-    width: 100%;
   }
 }
 
