@@ -40,6 +40,7 @@ body {
   animation-name: slide2;
 }
 
+.underline,
 .title2,
 .title3 {
   animation-name: fadeIn;
@@ -58,18 +59,8 @@ body {
 .title3 {
   animation-delay: 2s;
 }
-
 .underline {
-  animation-name: lineIn;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-  animation-duration: 3s;
-  opacity: 0;
-  animation-delay: 2s;
-
-  object-position: left center;
-  object-fit: none;
+  animation-delay: 1s;
 }
 
 .text1,
@@ -90,8 +81,8 @@ body {
   animation-delay: 5s;
 }
 .arrow {
-  animation-name: arrowIn;
-  animation-delay: 6s;
+  animation-name: fadeIn;
+  animation-delay: 5s;
 }
 
 .desktop {
@@ -144,26 +135,6 @@ body {
   }
   100% {
     transform: translateY(0px);
-    opacity: 1;
-  }
-}
-
-@keyframes lineIn {
-  0% {
-    opacity: 1;
-    width: 0;
-  }
-  100% {
-    opacity: 1;
-    width: 100%;
-  }
-}
-
-@keyframes arrowIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
     opacity: 1;
   }
 }
