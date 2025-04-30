@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+
+  "title": "Olivero-April25-1010x150-hestesko-topp-Budskap-1",
+  "description": "",
+
+  "width": "1010",
+  "height": "1500",
+
+  "events": {
+    "enabled": 1,
+    "list": {}
+  },
+
+  "clicktags": {
+    "clickTAG": "https://mills.no/olivero/produkt/olivero/"
+  },
+
+  "source": "index.html"
+}

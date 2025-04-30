@@ -1,0 +1,63 @@
+body {
+  margin: 0px;
+  background-color: transparent;
+}
+
+#banner {
+  position: absolute;
+  background-color: transparent;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.underline,
+.title2,
+.title3,
+.text1,
+.text2,
+.arrow {
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+  opacity: 0;
+}
+
+.title1 {
+  animation-delay: 0s;
+}
+.title2 {
+  animation-delay: 1s;
+}
+.title3 {
+  animation-delay: 2s;
+}
+.text1 {
+  animation-delay: 3s;
+}
+.text2 {
+  animation-delay: 4s;
+}
+.arrow {
+  animation-delay: 4s;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
