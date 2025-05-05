@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script>
-      document.write(
-        '<script src="' +
-          (window.API_URL ||
-            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
-              Math.random()) +
-          '"><\/script>'
-      );
-    </script>
+    <script src="https://s0.2mdn.net/ads/studio/Enabler.js"></script>
     <meta charset="utf-8" />
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
     <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
@@ -21,6 +13,9 @@
       }
     </style>
   </head>
+  <script type="text/javascript">
+    var clickTag = "https://mills.no/olivero/produkt/olivero/";
+  </script>
   <body>
     <div id="banner" class="layer">
       <img class="layer background" src="./image.jpg" />
@@ -35,18 +30,6 @@
         <img class="layer arrow" src="./arrow.png" />
       </div>
     </div>
-
-    <script>
-      var banner = document.getElementById("banner");
-      clickTAGvalue = dhtml.getVar(
-        "clickTAG",
-        "https://mills.no/olivero/produkt/olivero/"
-      );
-      landingpagetarget = dhtml.getVar("landingPageTarget", "_blank");
-
-      banner.onclick = function () {
-        window.open(clickTAGvalue, landingpagetarget);
-      };
-    </script>
+    <script src="logic.js"></script>
   </body>
 </html>
