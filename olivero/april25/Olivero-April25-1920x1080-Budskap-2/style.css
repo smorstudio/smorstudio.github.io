@@ -89,10 +89,16 @@ body {
   @media (max-width: 768px) {
     display: none;
   }
+  @container (max-width: 768px) {
+    display: none;
+  }
 }
 .mobile {
   display: none;
   @media (max-width: 768px) {
+    display: block;
+  }
+  @container (max-width: 768px) {
     display: block;
   }
 }

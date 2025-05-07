@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      #banner {
+        width: 100%;
+        height: 100%;
+      }
+
+      .layer {
+        object-fit: contain;
+      }
+      .background {
+        object-fit: cover;
+        object-position: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="banner" class="layer">
+      <img class="layer background" src="./image.jpg" />
+      <div class="layer">
+        <div class="slide slide1">
+          <img class="layer title1" src="./text-title.png" />
+          <img class="layer title2" src="./text-title-2.png" />
+          <img class="layer title3" src="./text-title-3.png" />
+        </div>
+        <div class="slide slide2">
+          <img class="layer text1" src="./text-payoff-1.png" />
+          <img class="layer text2" src="./text-payoff-2.png" />
+          <img class="layer arrow" src="./arrow.png" />
+        </div>
+      </div>
+    </div>
+    <script>
+      // ADNAMI CLICK TRACKING MACRO - DO NOT MODIFY //
+      const clickTagPrefix = "${CLICK_URL}",
+        // Landing Page - modify as required
+        clickURL = window.adnmClick
+          ? window.adnmClick
+          : "https://www.mils.no/olivero/produkt/olivero/",
+        // ID of your clickable HTML element - modify as required
+        clickElement = document.getElementById("banner");
+
+      // Click function
+      clickElement.addEventListener("click", function (e) {
+        const exitUrl = clickTagPrefix + clickURL;
+        window.open(exitUrl, "_blank");
+      });
+    </script>
+  </body>
+</html>
