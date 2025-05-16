@@ -70,7 +70,7 @@ body {
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(-4%);
+    transform: translateY(-5%);
   }
 }
 @keyframes label2 {
@@ -78,7 +78,7 @@ body {
     transform: translateY(0%);
   }
   100% {
-    transform: translateY(-2%);
+    transform: translateY(-1%);
   }
 }
 @keyframes label3 {
