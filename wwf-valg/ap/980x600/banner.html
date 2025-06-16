@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      document.write(
+        '<script src="' +
+          (window.API_URL ||
+            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
+              Math.random()) +
+          '"><\/script>'
+      );
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --color-background: #000000;
+
+        --width: 980px;
+        --height: 600px;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: var(--width);
+        height: var(--height);
+
+        overflow: hidden;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      #banner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: var(--color-background);
+        cursor: pointer;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      #banner img,
+      #banner svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      #banner svg circle {
+        /* transform-box: fill-box; */
+        /* transform-origin: 50; */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner">
+      <div class="container">
+        <img src="./Background.png" />
+        <img id="text" src="./Text.png" />
+        <!-- <img id="bubbles" src="./Bubbles.png" /> -->
+
+        <svg
+          width="980"
+          height="600"
+          viewBox="0 0 980 600"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="281.063" cy="402.063" r="21.0631" fill="#980014" />
+          <circle cx="333.189" cy="402.063" r="21.0631" fill="#DA4BBB" />
+          <circle
+            cx="385.316"
+            id="ap"
+            cy="402.063"
+            r="21.0631"
+            fill="#E51C30"
+          />
+          <circle cx="437.442" cy="402.063" r="21.0631" fill="#A4C845" />
+          <circle cx="489.568" cy="402.063" r="21.0631" fill="#408704" />
+          <circle cx="541.694" cy="402.063" r="21.0631" fill="#EFB51D" />
+          <circle cx="593.82" cy="402.063" r="21.0631" fill="#2AB28D" />
+          <circle cx="645.947" cy="402.063" r="21.0631" fill="#02B9F1" />
+          <circle cx="698.073" cy="402.063" r="21.0631" fill="#005896" />
+        </svg>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const clickTAGvalue = dhtml.getVar("clickTAG", "https://example.com");
+        const bannerElement = document.getElementById("banner");
+        bannerElement.addEventListener("click", function () {
+          window.open(clickTAGvalue, "_blank");
+        });
+
+        const firstCircles = document.querySelectorAll("circle:nth-child(1)");
+
+        const tl = gsap.timeline({ delay: 0.2 });
+
+        tl.from("circle", {
+          scale: 0,
+          transformOrigin: "50% 50%",
+          duration: 0.6,
+          ease: "back.out(1.7)",
+          stagger: {
+            amount: 0.4,
+            from: "center",
+          },
+        })
+          .from("#text", { autoAlpha: 0 })
+          .from("#text", {
+            y: "5%",
+          })
+          .to(
+            "circle:nth-child(-n + 2)",
+            {
+              x: "-50%",
+            },
+            "<"
+          )
+          .to(
+            "circle:nth-child(n + 4)",
+            {
+              x: "50%",
+            },
+            "<"
+          )
+          .to(
+            "#ap",
+            {
+              scale: 2,
+            },
+            "<"
+          );
+      });
+    </script>
+  </body>
+</html>
