@@ -5,13 +5,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "serve",
-    "zip-banners": "node zip-banners.js"
+    "zip-banners": "node zip-banners.js",
+    "generate-index": "node generate-index.js",
+    "package-banners": "npm run zip-banners -- $FOLDER && npm run generate-index -- $FOLDER"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "archiver": "^7.0.1",
     "serve": "^14.2.4"
   }
 }
