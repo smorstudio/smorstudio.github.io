@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      document.write(
+        '<script src="' +
+          (window.API_URL ||
+            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
+              Math.random()) +
+          '"><\/script>'
+      );
+    </script>
+    <meta charset="utf-8" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      #banner {
+        width: 300px;
+        height: 600px;
+      }
+      #heading {
+        transform-origin: 50% 30%;
+      }
+      #price {
+        transform-origin: 70% 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="banner" class="layer">
+      <img id="background" class="layer" src="./Bakgrunn.jpg" />
+      <img id="heading" class="layer" src="./Heading.png" />
+      <img id="text" class="layer" src="./Undertekst.png" />
+      <img id="logo" class="layer" src="./Logo.png" />
+      <img id="price" class="layer" src="./Prispunkt.png" />
+      <img id="disclaimer" class="layer" src="./Disclaimer.png" />
+    </div>
+
+    <script>
+      var banner = document.getElementById("banner");
+      clickTAGvalue = dhtml.getVar("clickTAG", "https://www.burgerking.no/");
+      landingpagetarget = dhtml.getVar("landingPageTarget", "_blank");
+
+      banner.onclick = function () {
+        window.open(clickTAGvalue, landingpagetarget);
+      };
+    </script>
+  </body>
+</html>
