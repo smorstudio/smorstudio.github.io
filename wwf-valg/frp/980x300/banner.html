@@ -3,15 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ad.size" content="width=980,height=300" />
     <title></title>
-    <script>
-      document.write(
-        '<script src="' +
-          (window.API_URL ||
-            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
-              Math.random()) +
-          '"><\/script>'
-      );
+    <script type="text/javascript">
+      var clickTag = "http://www.google.com";
     </script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <style>
@@ -40,6 +35,7 @@
       }
 
       #banner {
+        display: block;
         width: 100%;
         height: 100%;
         position: relative;
@@ -68,7 +64,7 @@
     </style>
   </head>
   <body>
-    <div id="banner">
+    <a id="banner" href="javascript:window.open(window.clickTag)">
       <div class="container">
         <img src="./Background.png" />
         <img id="text" src="./Text.png" />
@@ -92,16 +88,10 @@
           <circle id="ap" cx="671.337" cy="187.5" r="16.5" fill="#005896" />
         </svg>
       </div>
-    </div>
+    </a>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const clickTAGvalue = dhtml.getVar("clickTAG", "https://example.com");
-        const bannerElement = document.getElementById("banner");
-        bannerElement.addEventListener("click", function () {
-          window.open(clickTAGvalue, "_blank");
-        });
-
         const firstCircles = document.querySelectorAll("circle:nth-child(1)");
 
         const tl = gsap.timeline({ delay: 0.2 });
