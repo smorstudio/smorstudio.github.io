@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="ad.size" content="width=580,height=400" />
+    <title></title>
+    <script
+      type="text/javascript"
+      src="https://acdn.adnxs.com/html5-lib/1.4.1/appnexus-html5-lib.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <style>
+      :root {
+        --color-background: #ffaa1e;
+
+        --width: 580px;
+        --height: 400px;
+      }
+
+      html,
+      body {
+        margin: 0;
+        width: var(--width);
+        height: var(--height);
+
+        overflow: hidden;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      #banner {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: var(--color-background);
+        cursor: pointer;
+      }
+
+      .container {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      #banner img,
+      #banner svg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+      }
+
+      #product-card {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      #prisboble {
+        transform-origin: 244px 125px;
+      }
+    </style>
+  </head>
+  <body>
+    <a
+      id="banner"
+      href="javascript:void(0)"
+      onClick="window.open(APPNEXUS.getClickTag(), '_blank');"
+    >
+      <img src="./Bakgrunn.png" />
+      <img src="./Logo.png" />
+      <img src="./SMB-Tekst.png" />
+      <div id="product-card">
+        <img src="./Produktkort.png" />
+        <img src="./Produkt.png" />
+        <img src="./Produkttekst.png" />
+      </div>
+      <img id="prisboble" src="./Prisboble.png" />
+    </a>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const tl = gsap.timeline({ delay: 0.3 });
+
+        const pricePulse = gsap.to("#prisboble", {
+          keyframes: {
+            scale: [1, 1.2, 1],
+          },
+          duration: 0.6,
+          repeat: 6,
+          repeatDelay: 2,
+          delay: 0.2,
+        });
+
+        pricePulse.pause();
+
+        tl.from("#product-card", {
+          y: "-100%",
+          duration: 0.35,
+          ease: "power2.out",
+        })
+          .from(
+            "#prisboble",
+            {
+              y: "-100%",
+              duration: 0.3,
+              ease: "power2.out",
+            },
+            "< +0.1"
+          )
+          .call(() => {
+            pricePulse.play();
+          });
+      });
+    </script>
+  </body>
+</html>

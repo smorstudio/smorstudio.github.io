@@ -7,7 +7,8 @@
     "dev": "serve",
     "zip-banners": "node zip-banners.js",
     "generate-index": "node generate-index.js",
-    "package-banners": "npm run zip-banners -- $FOLDER && npm run generate-index -- $FOLDER"
+    "package-banners": "npm run zip-banners -- $FOLDER && npm run generate-index -- $FOLDER",
+    "package-all-banners": "node package-all-banners.js"
   },
   "keywords": [],
   "author": "",
