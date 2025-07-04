@@ -5,10 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="ad.size" content="width=320,height=400" />
     <title></title>
-    <script
-      type="text/javascript"
-      src="https://acdn.adnxs.com/html5-lib/1.4.1/appnexus-html5-lib.min.js"
-    ></script>
+    <script>
+      document.write(
+        '<script src="' +
+          (window.API_URL ||
+            "https://s1.adform.net/banners/scripts/rmb/Adform.DHTML.js?bv=" +
+              Math.random()) +
+          '"><\/script>'
+      );
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <style>
       :root {
@@ -70,11 +75,7 @@
     </style>
   </head>
   <body>
-    <a
-      id="banner"
-      href="javascript:void(0)"
-      onClick="window.open(APPNEXUS.getClickTag(), '_blank');"
-    >
+    <div id="banner">
       <img src="./Bakgrunn.png" />
       <img src="./Logo.png" />
       <img src="./SMB-Tekst.png" />
@@ -85,10 +86,11 @@
         <img src="./Produkttekst.png" />
       </div>
       <img id="prisboble" src="./Prisboble.png" />
-    </a>
+    </div>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        const clickTAGvalue = dhtml.getVar("clickTAG", "https://example.com");
         const tl = gsap.timeline({ delay: 0.3 });
 
         const pricePulse = gsap.to("#prisboble", {
