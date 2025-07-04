@@ -89,6 +89,10 @@
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const clickTAGvalue = dhtml.getVar("clickTAG", "https://example.com");
+        const bannerElement = document.getElementById("banner");
+        bannerElement.addEventListener("click", function () {
+          window.open(clickTAGvalue, "_blank");
+        });
         const tl = gsap.timeline({ delay: 0.3 });
 
         const pricePulse = gsap.to("#prisboble", {
