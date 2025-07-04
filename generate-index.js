@@ -30,7 +30,7 @@ function getBannerRows(dir) {
 
   return folders.map((folder) => {
     const bannerName = folder.name;
-    const htmlPath = path.join(bannerName, "banner.html");
+    const htmlPath = path.join(bannerName, "index.html");
     const zipName = zipMap[bannerName] || "";
     const zipPath = zipName ? path.join(dir, zipName) : "";
     const zipSize =
