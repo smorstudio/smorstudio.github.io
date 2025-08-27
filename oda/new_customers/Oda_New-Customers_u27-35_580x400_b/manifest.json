@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+
+  "title": "580x400_Oda_New-Customers_u27-37_b",
+  "description": "",
+
+  "width": "580",
+  "height": "400",
+
+  "events": {
+    "enabled": 1,
+    "list": {}
+  },
+
+  "clicktags": {
+    "clickTAG": "https://www.oda.no/"
+  },
+
+  "source": "index.html"
+}
