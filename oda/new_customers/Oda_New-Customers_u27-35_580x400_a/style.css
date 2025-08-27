@@ -32,6 +32,13 @@ body {
   animation-fill-mode: forwards;
   animation-delay: 0.25s;
 }
+#cta {
+  animation-name: pop;
+  animation-iteration-count: infinite;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+}
 #button {
   opacity: 0;
   animation-name: fadeIn;
@@ -45,7 +52,7 @@ body {
   animation-iteration-count: infinite;
   animation-duration: 3s;
   animation-fill-mode: forwards;
-  animation-delay: 1.5s;
+  animation-delay: 2s;
 }
 
 @keyframes car {
@@ -65,6 +72,19 @@ body {
   100% {
     transform: translateY(0px);
     opacity: 1;
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+  12.5% {
+    transform: scale(1.05);
+  }
+  25%,
+  100% {
+    transform: scale(1);
   }
 }
 
