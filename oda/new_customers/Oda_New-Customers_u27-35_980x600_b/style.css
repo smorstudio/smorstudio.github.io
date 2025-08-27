@@ -18,13 +18,13 @@ body {
   object-fit: cover;
 }
 
-#heading {
-  animation-name: fadeIn;
+#car {
+  animation-name: car;
   animation-iteration-count: 1;
   animation-duration: 0.5s;
   animation-fill-mode: forwards;
 }
-#button {
+#heading {
   opacity: 0;
   animation-name: fadeIn;
   animation-iteration-count: 1;
@@ -32,11 +32,29 @@ body {
   animation-fill-mode: forwards;
   animation-delay: 0.25s;
 }
+#button {
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 0.5s;
+}
 #award {
   animation-name: pulse;
   animation-iteration-count: infinite;
   animation-duration: 3s;
   animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+}
+
+@keyframes car {
+  0% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0px);
+  }
 }
 
 @keyframes fadeIn {
@@ -55,7 +73,7 @@ body {
     transform: scale(1);
   }
   12.5% {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
   25%,
   100% {
