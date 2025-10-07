@@ -95,7 +95,7 @@ body {
   }
 }
 
-@keyframes textAnimAlternative {
+@keyframes textAnimAlternativeDelay {
   0%,
   10% {
     transform: translateY(10px);
