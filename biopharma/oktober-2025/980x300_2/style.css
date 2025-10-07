@@ -19,19 +19,19 @@ body {
 }
 
 #title1 {
-  animation-delay: -5s;
+  animation-delay: -8s;
   opacity: 1;
   animation-iteration-count: 7;
 }
 #title2 {
-  animation-delay: -2.5s;
+  animation-delay: -4s;
   animation-iteration-count: 6.25;
 }
 
 #title1,
 #title2 {
   animation-name: textAnim;
-  animation-duration: 5s;
+  animation-duration: 8s;
   animation-fill-mode: forwards;
 }
 
@@ -40,8 +40,8 @@ body {
     transform: translateX(-10px);
     opacity: 0;
   }
-  7.5%,
-  42.5% {
+  5%,
+  45% {
     transform: translateX(0px);
     opacity: 1;
   }
@@ -57,8 +57,8 @@ body {
     transform: translateY(10px);
     opacity: 0;
   }
-  7.5%,
-  42.5% {
+  5%,
+  45% {
     transform: translateY(0px);
     opacity: 1;
   }
