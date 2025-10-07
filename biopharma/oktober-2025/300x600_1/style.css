@@ -18,19 +18,27 @@ body {
   object-fit: cover;
 }
 
-#title1 {
+#title1a {
+  animation-name: textAnim;
+  animation-delay: -8s;
+  opacity: 1;
+  animation-iteration-count: 7;
+}
+#title1b {
+  animation-name: textAnimDelay;
   animation-delay: -8s;
   opacity: 1;
   animation-iteration-count: 7;
 }
 #title2 {
+  animation-name: textAnim;
   animation-delay: -4s;
   animation-iteration-count: 6.25;
 }
 
-#title1,
+#title1a,
+#title1b,
 #title2 {
-  animation-name: textAnim;
   animation-duration: 8s;
   animation-fill-mode: forwards;
 }
@@ -52,12 +60,48 @@ body {
   }
 }
 
+@keyframes textAnimDelay {
+  0%,
+  10% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  15%,
+  45% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  50%,
+  100% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+
 @keyframes textAnimAlternative {
   0% {
     transform: translateY(10px);
     opacity: 0;
   }
   5%,
+  45% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+  50%,
+  100% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+
+@keyframes textAnimAlternative {
+  0%,
+  10% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  15%,
   45% {
     transform: translateY(0px);
     opacity: 1;
